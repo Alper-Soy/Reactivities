@@ -8,9 +8,7 @@ import { observer } from "mobx-react-lite";
 interface IProps {
   activity: IActivity | undefined;
 }
-const ActivityForm: React.FC<IProps> = ({
-  activity: initialFormState
-}) => {
+const ActivityForm: React.FC<IProps> = ({ activity: initialFormState }) => {
   const activityStore = useContext(ActivityStore);
   const {
     createActivity,
