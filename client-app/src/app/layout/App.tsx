@@ -2,7 +2,7 @@ import React, { useEffect, Fragment, useContext } from "react";
 import { Container } from "semantic-ui-react";
 import NavBar from "../../features/nav/NavBar";
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
-import { LoadingComponent } from "./LoadingComponent";
+import LoadingComponent from "./LoadingComponent";
 import ActivityStore from "../../app/stores/activityStore";
 import { observer } from "mobx-react-lite";
 
