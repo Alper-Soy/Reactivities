@@ -10,7 +10,8 @@ interface DetailParams {
 }
 
 const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
-  match
+  match,
+  history
 }) => {
   const activityStore = useContext(ActivityStore);
   const {
@@ -25,7 +26,8 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
     loadActivity(match.params.id);
   }, [loadActivity]);
 
-  if (loadingInitial || !activity) return <LoadingComponent content='loading activity...' />;
+  if (loadingInitial || !activity)
+    return <LoadingComponent content='loading activity...' />;
 
   return (
     <Card fluid>
@@ -50,7 +52,7 @@ const ActivityDetails: React.FC<RouteComponentProps<DetailParams>> = ({
             content='Edit'
           />
           <Button
-            onClick={cancelSelectedActivity}
+            onClick={() => history.push("/activities")}
             basic
             color='grey'
             content='Cancel'
