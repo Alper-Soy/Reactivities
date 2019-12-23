@@ -8,6 +8,8 @@ interface IProps extends FieldRenderProps<Date, HTMLElement>, FormFieldProps {}
 const DateInput: React.FC<IProps> = ({
   input,
   width,
+  date = false,
+  time = false,
   placeholder,
   meta: { touched, error },
   rest
@@ -18,6 +20,8 @@ const DateInput: React.FC<IProps> = ({
         placeholder={placeholder}
         value={input.value || null}
         onChange={input.onChange}
+        date={date}
+        time={time}
         {...rest}
       />
       {touched && error && (
