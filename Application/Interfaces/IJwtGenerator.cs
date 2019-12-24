@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Application.Interfaces
 {
-    interface IJwtGenerator
+    public interface IJwtGenerator
     {
+        string CreateToken(AppUser user);
     }
 }
